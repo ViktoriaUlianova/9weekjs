@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/form-validate.css">
+    <link rel="stylesheet" href="/assets/styles/normalize.css">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-image: url(assets/image/formbgd.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    input:required:valid {
+        border-color: yellowgreen;
+    }
+
+    #errorsInfo {
+        padding: 5%;
+        color: red;
+        font-size: 22px;
+        background-color: rgba(255, 255, 255, 0.265);
+    }
+
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        width: 20vw;
+        border-radius: 19px;
+        background-color: rgba(255, 250, 250, 0.619);
+        padding: 5%;
+        padding-bottom: 15%;
+        margin-top: 15%;
+
+    }
+
+    input {
+        /* margin: 0 auto; */
+        padding: 3%;
+        opacity: 0.85;
+        border-radius: 13px;
+    }
+
+    .group {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    h1,
+    .p,
+    .group {
+        font-size: 22px;
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        /* background-color: hsla(0, 0%, 56%, 0.877); */
+    }
+
+    .gender {
+        font-size: 26px;
+        color: white;
+    }
+
+    #age {
+        cursor: pointer;
+    }
+
+    select {
+        border-radius: 7px;
+        padding: 7px;
+        cursor: pointer;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        border-radius: 13px;
+        padding: 9px 52px 7px 47px;
+        cursor: pointer;
+        width: 20%;
+
+    }
+
+    button:hover {
+        background-color: snow;
+    }
+</style>
+
+<body>
+    <form action="" novalidate>
+        <div class="form">
+            <h1>Sign up</h1>
+            <!-- name -->
+            <div class="name group">
+                <label for="username">*</label>
+                <input type="text" id="username" placeholder="Full name" value="" required maxlength="13">
+            </div>
+            <!-- phone -->
+            <div class="phone group">
+                <label for="phonenumber">*</label>
+                <input type="tel" id="phonenumber" placeholder="Phone number" value="" required>
+            </div>
+            <!-- gender -->
+            <div class="gender group">
+                <label for="female"> Women</label>
+                <input type="radio" checked name="gender" id="female" value="">
+                <label for="male">Man</label>
+                <input type="radio" name="gender" id="male" value="">
+            </div>
+            <!-- age -->
+            <div class="age group">
+                <label for="age" class="p">* How old are you?</label>
+                <input type="number" id="age" value="" min="18" max="100" required>
+            </div>
+            <!-- country -->
+            <div class="country group">
+                <label for="country" class="p select-country">Select your country</label> <br>
+                <select name="country" id="country">
+
+                    <option value="russia">Russia</option>
+                    <option value="usa">USA</option>
+                    <option value="sweden">Sweden</option>
+                    <option value="thailand">Thailand</option>
+                    <option value="cambodia">Cambodia</option>
+                </select>
+            </div>
+            <!-- email -->
+            <div class="email group">
+                <label for="mail">* E-mail</label>
+                <input type="email" name="mail" id="mail" placeholder="Your email" value="" required
+                    pattern="/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i">
+            </div>
+            <!-- password -->
+            <div class="password group">
+                <label for="userpass">* Password</label>
+                <input type="password" id="userpass" placeholder="Password" required
+                    pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/">
+            </div>
+            <button type='submit' id="postButton">Submit</button>
+        </div>
+        <div id="errorsInfo"></div>
+    </form>
+
+
+    <script src="assets/js/form.js"></script>
+</body>
+
+</html>
