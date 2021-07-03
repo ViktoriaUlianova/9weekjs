@@ -98,7 +98,7 @@
 </style>
 
 <body>
-    <form action="" novalidate>
+    <form action="" id="form" onsubmit="return false;">
         <div class="form">
             <h1>Sign up</h1>
             <!-- name -->
@@ -110,13 +110,6 @@
             <div class="phone group">
                 <label for="phonenumber">*</label>
                 <input type="tel" id="phonenumber" placeholder="Phone number" value="" required>
-            </div>
-            <!-- gender -->
-            <div class="gender group">
-                <label for="female"> Women</label>
-                <input type="radio" checked name="gender" id="female" value="">
-                <label for="male">Men</label>
-                <input type="radio" name="gender" id="male" value="">
             </div>
             <!-- age -->
             <div class="age group">
@@ -144,10 +137,9 @@
             <!-- password -->
             <div class="password group">
                 <label for="userpass">* Password</label>
-                <input type="password" id="userpass" placeholder="Password" required
-                    pattern="/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/">
+                <input type="password" id="userpass" placeholder="Password" required>
             </div>
-            <button type='submit' id="postButton">Submit</button>
+            <button id="postButton">Submit</button>
         </div>
         <div id="errorsInfo"></div>
     </form>

@@ -21,19 +21,20 @@ function checkValidity(input) {
         errors.push("Превышено допустимое количество символов")
     }
 
-
-
 }
 postButton.onclick = function (event) {
     event.preventDefault();
     let userForm = {
         name: document.getElementById("username").value,
         phone: document.getElementById("phonenumber").value,
-        gender: document.getElementsByName("name").value,
-        age: document.getElementsById("age").value,
+        age: document.getElementById("age").value,
+        country: document.getElementById("country").value,
+        email: document.getElementById("mail").value,
+        password: document.getElementById("userpass").value,
     }
 
-    errors = [];
+    console.log(userForm);
+
     let inputs = document.querySelectorAll("input");
 
     for (let input of inputs) {
@@ -42,4 +43,19 @@ postButton.onclick = function (event) {
 
     document.getElementById("errorsInfo").innerHTML = errors.join(".<br>");
 
+
+    fetch('https://httpbin.org/post', {
+            method: 'POST',
+            body: JSON.stringify(userForm),
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            }
+        })
+        .then(response => response.json())
+        .then(user => {
+            console.log(user);
+        })
+        .catch(error => console.log(error));
 }
+
+// errors = [];
