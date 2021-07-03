@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анкета для усато-полосатых</title>
+<link rel="icon" href="https://www.flaticon.com/svg/vstatic/svg/890/890953.svg?token.." type="image/svg">
+
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+
+    }
+
+    .form {
+        border-radius: 7px;
+        background-color: rgba(225, 0, 255, 0.088);
+        border: 1px solid yellowgreen;
+        padding: 2% 1% 1% 2%;
+    }
+
+    input {
+        margin: 2%;
+    }
+
+    input:required:valid,
+    select:required:valid {
+        border-color: limegreen;
+    }
+
+    .none {
+        border-color: white;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <form class="form" id="form">
+            <h1>Анкетирование</h1> <br>
+            <div> <label for="name">* Имя хвостатого </label>
+                <input type="text" id="name" name="catName" required></div>
+
+            <div> <label for="name2">* Имя безхвостого </label>
+                <input type="text" id="name2" name="userName" required>
+            </div>
+
+
+            <div> <label for="phone">* Как связаться </label>
+                <input type="tel" id="phone" name="phone" required> </div>
+
+            <div>
+                <label for="breed">Из какого рода происходит хвостатый </label>
+
+                <select id="breed" name="breed">
+                    <option value="0"></option>
+                    <option value="1">Ласковое мурчало</option>
+                    <option value="2">Тыгыдымский тыгыдым</option>
+                    <option value="3">Ночная фурия</option>
+                    <option value="4">Ненасытный пузенец</option>
+                    <option value="5">Мистер/миссис неприкасаемость</option>
+                    <option value="6">Царь/царица снов</option>
+                    <option value="7">Громкое мяукало</option>
+                    <option value="8">Охотник на мух или хищный хищник</option>
+
+
+                </select>
+            </div>
+
+            <div>
+
+                <label for="gender">Выберите пол</label>
+                <select id="gender" name="gender" required>
+                    <option disabled selected></option>
+                    <option value="men">Мадам</option>
+                    <option value="women">Джентельмен</option>
+                </select>
+            </div>
+
+            <div> <label for="comment"> Комментарий котея о содержателе </label> <br />
+                <textarea rows="15" id="comment" name="comments"></textarea> </div>
+
+            <div>
+
+                <button type="submit" id="btn"> ok </button>
+
+        </form>
+    </div>
+    <script src="assets/js/cat-form.js"></script>
+</body>
+
+</html>

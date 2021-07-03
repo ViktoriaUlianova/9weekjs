@@ -26,7 +26,7 @@ function checkValidity(input) {
 }
 postButton.onclick = function (event) {
     event.preventDefault();
-    let user = {
+    let userForm = {
         name: document.getElementById("username").value,
         phone: document.getElementById("phonenumber").value,
         gender: document.getElementsByName("name").value,
